@@ -8,27 +8,38 @@
 </head>
 <body>
     
+    <!-- основной контейнер виджета погоды -->
     <section class="weather" aria-label="Weather Widget">
+        
+        <!-- форма поиска города -->
         <form action="" class="form" role="search" aria-label="Search city weather">
-            <label for="city" class="form__label">Enter city</label>
-            <input type="text" class="form__input" placeholder="Enter city">
-            <button type="submit" class="form__btn" aria-label="Search"></button>
+            <input type="text" class="form__input" placeholder="Enter city name">
+            <button type="submit" class="form__btn" aria-label="Search">
+                <img src="./img/ui/search.svg" alt="Search icon" class="ui__img">
+            </button>
         </form>
     
-        <figure class="weather__icon">
+        <div class="weather__info">
+            
+           <!-- блок иконки + температура -->
             <img src="./img/weather/cloudy.svg" alt="Cloudy weather" class="weather__img">
             <figcaption class="weather__temp">22°C</figcaption>
-        </figure>
+            
+            <!-- название города -->
+            <h2 class="weather__city">New York</h2>
+        </div>
 
-        <h2 class="weather__city">New York</h2>
-
+        <!-- дополнительные параметры: влажность, ветер -->
         <div class="weather__details">
+            
+            <!-- влажность -->
             <section class="details" aria-label="Humidity">
                 <img src="./img/ui/humidity.svg" alt="Humidity icon" class="details__img">
                 <div class="details__value">50%</div>
                 <div class="details__title">Humidity</div>
             </section>
 
+            <!-- скорость ветра -->
             <section class="details" aria-label="Wind Speed">
                 <img src="./img/ui/wind-speed.svg" alt="Wind speed icon" class="details__img">
                 <div class="details__value">10 km/h</div>
