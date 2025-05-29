@@ -3,10 +3,12 @@
 
 
 :root {
-  --main-color: #f2f2f7;
+  --main-color: #f2f2f7; /* фон страницы */
+  --second-color: #1c1c1e; /* основной текст */
+
 }
 
-
+/* Базовые стили для body */
 body{
     background-color: var(--main-color);
     font-family: 'Inter', system-ui, sans-serif;
@@ -22,20 +24,19 @@ body{
 /* Виджет погоды */
 .weather{
     width: 500px;
-    height: 700px;
 
-    border-radius: 24px;
+    border-radius: 25px;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    padding: 24px;
+    padding: 35px;
     color: #1c1c1e; 
 }
 
 
-/* Контейнер формы поиска */
+/* Форма поиска города */
 .form{
     width: 100%;
     height: 50px;
@@ -48,11 +49,11 @@ body{
     border-radius: 60px;
     box-shadow: 0 8px 80px rgba(0, 0, 0, 0.1);
 
-    padding: 20px;
+    padding: 35px;
 }
 
 
-/* Поле ввода */
+/* Инпут формы */
 .form__input {
     background: transparent;
     flex-grow: 1;
@@ -72,14 +73,68 @@ body{
 }
 
 
-/* Размер иконки поиска */
+/* Иконка внутри кнопки */
 .form__btn img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+/* Основная иконка погоды */
+.weather__img{
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+
+/* Контейнер с температурой и городом */
+.weather__info{
+    padding: 35px 0 85px;
+
+    text-align: center;
+}
+
+/* Температура */
+.weather__temp{
+    color: var(--second-color);
+    font-size: 56px;
+    font-weight: 700;
+
+}
+
+/* Название города */
+.weather__city{
+    font-size: 38px;
+    font-weight: 500;
+}
+
+/* Контейнер с деталями (влажность, ветер) */
+.weather__details{
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+
 }
 
 /* Размер иконки погоды и деталей (влажность, ветер и т.д) */
-.weather__img,
 .details__img{
     width: 40px;
+    grid-row: 1 / 3;
+}
+
+
+/* Один блок детали (влажность/ветер) */
+.details{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 40px auto;
+    grid-template-rows: auto auto;
+    column-gap: 20px;
+}
+
+/* Значение и подпись детали */
+.details__value,
+.details__title{
+    font-size: 20px;
 }
